@@ -18,9 +18,9 @@ namespace P4
 
         private string affiliation;
 
-        private int easiness;
+        private int easiness = 5 ;
 
-        private int helpfulness;
+        private int helpfulness = 5  ;
 
         // The first Professor constructor
 
@@ -36,7 +36,7 @@ namespace P4
         // The second Professor constructor
         // Textbook@P204
 
-        public Professor(string firstName, string lastName, string affiliation, int easiness = 3, int helpfulness = 3)
+        public Professor(string firstName, string lastName, string affiliation, int easiness, int helpfulness)
         {
             this.firstName = firstName;
             this.lastName = lastName;
@@ -84,14 +84,14 @@ namespace P4
 
         public void SetHelpfulness(int helpfulness)
         {
-            
+            this.helpfulness = helpfulness;
         }
         // Override the ToString() method
         // Textbook@P213, Example 4-11
 
         public override string ToString()
         {
-            string name = firstName + " " + lastName;
+            string name = firstName + " " + lastName +" "+ Affiliation+" "+ helpfulness+" "+easiness;
             return name;
 
         }
@@ -101,8 +101,8 @@ namespace P4
         // affiliation, and the two grades
         public void Display()
         {
-
-
+            Console.WriteLine(ToString());
+            
         }
 
     }
@@ -114,13 +114,13 @@ namespace P4
         // Main method to demonstrate how the Professor class works
         static void Main(string[] args)
         {
-            Professor p4;
-            p4 = new Professor("x", "h", "USI");
-            Console.WriteLine(p4.Affiliation); 
-
             // Create an instance of the Professor class
             // Textbook@P215
 
+            Professor p4;
+            p4 = new Professor("Xue", "Han", "USI");
+            p4.Display();
+           
             // Invoke the display method of the above Professor instance
             // Textbook@P218
         }
